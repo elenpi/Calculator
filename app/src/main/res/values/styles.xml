@@ -1,0 +1,5 @@
+<resources>
+    <style name="CalculatorButton">
+        <item name="android:textColor">#ffff00</item>
+    </style>
+</resources>
