@@ -2,8 +2,10 @@ package com.example.calculator
 
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AlphaAnimation
 import androidx.appcompat.app.AppCompatActivity
 import com.example.calculator.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -31,7 +33,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.buttonDivision.setOnClickListener(this)
         binding.buttonAddition.setOnClickListener(this)
         binding.buttonSubstraction.setOnClickListener(this)
+        binding.buttonEquals.setOnClickListener(this)
         binding.buttonComma.setOnClickListener(this)
+        binding.buttonClear.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -76,6 +80,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 calculator.addDigit('9')
                 binding.textView.setText(calculator.buffer)
             }
+            R.id.buttonComma -> {
+                calculator.addDigit('.')
+                binding.textView.setText(calculator.buffer)
+            }
             R.id.buttonMultiplication -> {
                 calculator.addOperation('*')
                 binding.textView.setText(calculator.buffer)
@@ -88,15 +96,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 calculator.addOperation('+')
                 binding.textView.setText(calculator.buffer)
             }
-            R.id.buttonComma -> {
-                calculator.addOperation(',')
-                binding.textView.setText(calculator.buffer)
-            }
             R.id.buttonSubstraction -> {
                 calculator.addOperation('-')
                 binding.textView.setText(calculator.buffer)
             }
-
+            R.id.buttonEquals -> {
+                calculator.addOperation('=')
+                binding.textView.setText(calculator.buffer)
+            }
+            R.id.buttonClear -> {
+                calculator.addOperation('c')
+                binding.textView.setText(calculator.buffer)
+            }
             else -> {
             }
         }
