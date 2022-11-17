@@ -24,28 +24,52 @@ class Calculator {
             val temp = buffer.toDouble()
             result = result + temp
             operation = symbol
-            buffer = result.toString()
+            if(result.toString().endsWith(".0")){
+                buffer =result.toString().dropLast(2)
+            } else {
+                buffer = result.toString()
+            }
+            //buffer = result.toString()
         } else if (operation == '-') {
             operation = symbol
             val temp = buffer.toDouble()
             result = result - temp
             operation = symbol
-            buffer = result.toString()
+            if(result.toString().endsWith(".0")){
+                buffer =result.toString().dropLast(2)
+            } else {
+                buffer = result.toString()
+            }
+            //buffer = result.toString()
         }  else if (operation == '*') {
             val temp = buffer.toDouble()
             result = result * temp
             operation = symbol
-            buffer = result.toString()
+            if(result.toString().endsWith(".0")){
+                buffer =result.toString().dropLast(2)
+            } else {
+                buffer = result.toString()
+            }
+            //buffer = result.toString()
         }  else if (operation == '/') {
             val temp = buffer.toDouble()
             result = result / temp
             operation = symbol
-            buffer = result.toString()
+            if(result.toString().endsWith(".0")){
+                buffer =result.toString().dropLast(2)
+            } else {
+                buffer = result.toString()
+            }
+            //buffer = result.toString()
         }  else if (operation == '=') {
             val temp = buffer.toDouble()
             result = temp
             operation = symbol
-            buffer = result.toString()
+            if(result.toString().endsWith(".0")){
+                buffer =result.toString().dropLast(2)
+            } else {
+                buffer = result.toString()
+            }
         } else {
             operation = symbol
             result = buffer.toDouble()
