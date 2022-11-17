@@ -41,42 +41,82 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.button0 -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
                 calculator.addDigit('0')
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button1 -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
                 calculator.addDigit('1')
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button2 -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
                 calculator.addDigit('2')
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button3 -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
                 calculator.addDigit('3')
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button4 -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
                 calculator.addDigit('4')
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button5 -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
                 calculator.addDigit('5')
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button6 -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
                 calculator.addDigit('6')
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button7 -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
                 calculator.addDigit('7')
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button8 -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
                 calculator.addDigit('8')
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button9 -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
                 calculator.addDigit('9')
                 binding.textView.setText(calculator.buffer)
             }
@@ -85,28 +125,53 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.textView.setText(calculator.buffer)
             }
             R.id.buttonMultiplication -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
+                v.setSelected(true)
                 calculator.addOperation('*')
                 binding.textView.setText(calculator.buffer)
             }
             R.id.buttonDivision -> {
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
+                v.setSelected(true)
                 calculator.addOperation('/')
                 binding.textView.setText(calculator.buffer)
             }
             R.id.buttonAddition -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
+                v.setSelected(true)
                 calculator.addOperation('+')
                 binding.textView.setText(calculator.buffer)
+
             }
             R.id.buttonSubstraction -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                v.setSelected(true)
                 calculator.addOperation('-')
                 binding.textView.setText(calculator.buffer)
             }
             R.id.buttonEquals -> {
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
                 calculator.addOperation('=')
                 binding.textView.setText(calculator.buffer)
             }
             R.id.buttonClear -> {
-                calculator.addOperation('c')
-                binding.textView.setText(calculator.buffer)
+                binding.buttonDivision.setSelected(false)
+                binding.buttonMultiplication.setSelected(false)
+                binding.buttonAddition.setSelected(false)
+                binding.buttonSubstraction.setSelected(false)
+                binding.textView.setText(null)
+                calculator.calculatorClear()
             }
             else -> {
             }
