@@ -1,7 +1,6 @@
 package com.example.calculator
 
-import android.icu.text.DecimalFormat
-import java.math.BigDecimal
+import android.util.Log
 
 class Calculator {
 
@@ -10,66 +9,48 @@ class Calculator {
     var result: Double = 0.0
 
     fun addDigit(digit: Char) {
-        if(buffer == result.toString()){
+        if(buffer == result.toString()) {
             buffer = ""
         }
         buffer = buffer + digit
     }
 
     fun addOperation(symbol: Char) {
-        if (buffer.isBlank()) {
-            buffer=""
+
+        if (buffer.isEmpty()) {
+            buffer= ""
         } else if (operation == '+') {
             operation = symbol
             val temp = buffer.toDouble()
             result = result + temp
             operation = symbol
-            if(result.toString().endsWith(".0")){
-                buffer =result.toString().dropLast(2)
-            } else {
-                buffer = result.toString()
-            }
-            //buffer = result.toString()
-        } else if (operation == '-') {
+            buffer = result.toString()
+        }  else if (operation == '-') {
             operation = symbol
             val temp = buffer.toDouble()
             result = result - temp
             operation = symbol
-            if(result.toString().endsWith(".0")){
-                buffer =result.toString().dropLast(2)
-            } else {
-                buffer = result.toString()
-            }
-            //buffer = result.toString()
+            buffer = result.toString()
         }  else if (operation == '*') {
             val temp = buffer.toDouble()
             result = result * temp
             operation = symbol
-            if(result.toString().endsWith(".0")){
-                buffer =result.toString().dropLast(2)
-            } else {
-                buffer = result.toString()
-            }
-            //buffer = result.toString()
+            buffer = result.toString()
         }  else if (operation == '/') {
             val temp = buffer.toDouble()
             result = result / temp
             operation = symbol
-            if(result.toString().endsWith(".0")){
-                buffer =result.toString().dropLast(2)
-            } else {
-                buffer = result.toString()
-            }
-            //buffer = result.toString()
+            buffer = result.toString()
         }  else if (operation == '=') {
             val temp = buffer.toDouble()
             result = temp
             operation = symbol
-            if(result.toString().endsWith(".0")){
-                buffer =result.toString().dropLast(2)
-            } else {
-                buffer = result.toString()
-            }
+//            if(result.toString().endsWith(".0")){
+//                buffer =result.toString().dropLast(2)
+//            } else {
+//                buffer = result.toString()
+//            }
+            buffer = result.toString()
         } else {
             operation = symbol
             result = buffer.toDouble()

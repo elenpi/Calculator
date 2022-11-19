@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityMainBinding
     private var calculator: Calculator = Calculator()
+    val arrayList = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.buttonAddition.setSelected(false)
                 binding.buttonSubstraction.setSelected(false)
                 calculator.addDigit('0')
+                binding.textViewWhole.setText("0")
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button1 -> {
@@ -53,7 +55,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.buttonMultiplication.setSelected(false)
                 binding.buttonAddition.setSelected(false)
                 binding.buttonSubstraction.setSelected(false)
+
                 calculator.addDigit('1')
+                binding.textViewWhole.setText("1")
+                arrayList.add("1")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button2 -> {
@@ -61,7 +67,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.buttonMultiplication.setSelected(false)
                 binding.buttonAddition.setSelected(false)
                 binding.buttonSubstraction.setSelected(false)
+
                 calculator.addDigit('2')
+                binding.textViewWhole.setText("2")
+                arrayList.add("2")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button3 -> {
@@ -71,6 +81,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.buttonSubstraction.setSelected(false)
 
                 calculator.addDigit('3')
+                binding.textViewWhole.setText("3")
+                arrayList.add("3")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button4 -> {
@@ -80,6 +93,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.buttonSubstraction.setSelected(false)
 
                 calculator.addDigit('4')
+                arrayList.add("4")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button5 -> {
@@ -89,6 +104,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.buttonSubstraction.setSelected(false)
 
                 calculator.addDigit('5')
+                binding.textViewWhole.setText("5")
+                arrayList.add("5")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button6 -> {
@@ -98,6 +116,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.buttonSubstraction.setSelected(false)
 
                 calculator.addDigit('6')
+                binding.textViewWhole.setText("6")
+                arrayList.add("6")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button7 -> {
@@ -107,6 +128,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.buttonSubstraction.setSelected(false)
 
                 calculator.addDigit('7')
+                binding.textViewWhole.setText("7")
+                arrayList.add("7")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button8 -> {
@@ -116,6 +140,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.buttonSubstraction.setSelected(false)
 
                 calculator.addDigit('8')
+                binding.textViewWhole.setText("8")
+                arrayList.add("8")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
             }
             R.id.button9 -> {
@@ -126,9 +153,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                 calculator.addDigit('9')
                 binding.textView.setText(calculator.buffer)
+                arrayList.add("9")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
+                binding.textViewWhole.setText("9")
             }
             R.id.buttonComma -> {
                 calculator.addDigit('.')
+                arrayList.add(".")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
             }
             R.id.buttonMultiplication -> {
@@ -138,6 +170,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                 v.setSelected(true)
                 calculator.addOperation('*')
+                arrayList.add("*")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
             }
             R.id.buttonDivision -> {
@@ -147,6 +181,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                 v.setSelected(true)
                 calculator.addOperation('/')
+                arrayList.add("/")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
             }
             R.id.buttonAddition -> {
@@ -156,6 +192,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                 v.setSelected(true)
                 calculator.addOperation('+')
+                arrayList.add("3")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
 
             }
@@ -165,6 +203,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.buttonAddition.setSelected(false)
 
                 v.setSelected(true)
+                arrayList.add("-")
+                binding.textViewWhole.setText(arrayList.joinToString(""))
+
+                if(arrayList.isEmpty()){
+                    calculator.buffer = "-"
+                }
                 calculator.addOperation('-')
                 binding.textView.setText(calculator.buffer)
             }
@@ -175,6 +219,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.buttonSubstraction.setSelected(false)
 
                 calculator.addOperation('=')
+                arrayList.add("=")
+                arrayList.add(calculator.buffer)
+                binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
             }
             R.id.buttonClear -> {
@@ -183,7 +230,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.buttonAddition.setSelected(false)
                 binding.buttonSubstraction.setSelected(false)
 
-                binding.textView.setText(null)
+                binding.textViewWhole.setText(arrayList.joinToString(""))
+                arrayList.clear()
+                binding.textView.setText(calculator.buffer)
                 calculator.calculatorClear()
             }
             else -> {
