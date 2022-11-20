@@ -1,7 +1,5 @@
 package com.example.calculator
 
-import android.util.Log
-
 class Calculator {
 
     var buffer: String = ""
@@ -17,16 +15,15 @@ class Calculator {
 
     fun addOperation(symbol: Char) {
 
-        if (buffer.isEmpty()) {
-            buffer= ""
-        } else if (operation == '+') {
+        if (buffer.isEmpty() && symbol == '-') {
+            addDigit('-')
+         } else if (operation == '+') {
             operation = symbol
             val temp = buffer.toDouble()
             result = result + temp
             operation = symbol
             buffer = result.toString()
         }  else if (operation == '-') {
-            operation = symbol
             val temp = buffer.toDouble()
             result = result - temp
             operation = symbol
@@ -51,6 +48,8 @@ class Calculator {
 //                buffer = result.toString()
 //            }
             buffer = result.toString()
+        } else if(buffer.isEmpty() && symbol == '+' || symbol == '*' || symbol == '/') {
+            buffer = ""
         } else {
             operation = symbol
             result = buffer.toDouble()

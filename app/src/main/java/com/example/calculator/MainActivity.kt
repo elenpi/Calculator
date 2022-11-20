@@ -192,12 +192,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                 v.setSelected(true)
                 calculator.addOperation('+')
-                arrayList.add("3")
+                arrayList.add("+")
                 binding.textViewWhole.setText(arrayList.joinToString(""))
                 binding.textView.setText(calculator.buffer)
 
             }
             R.id.buttonSubstraction -> {
+
                 binding.buttonDivision.setSelected(false)
                 binding.buttonMultiplication.setSelected(false)
                 binding.buttonAddition.setSelected(false)
@@ -205,10 +206,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 v.setSelected(true)
                 arrayList.add("-")
                 binding.textViewWhole.setText(arrayList.joinToString(""))
-
-                if(arrayList.isEmpty()){
-                    calculator.buffer = "-"
-                }
                 calculator.addOperation('-')
                 binding.textView.setText(calculator.buffer)
             }
